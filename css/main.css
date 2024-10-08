@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{ 
+    font-family: 'Moderustic', sans-serif;
+    overflow-x: hidden;
+    background: url('/assets/background.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.title{
+    font-family: 'Chivo', sans-serif;
+    font-weight: 500;
+    text-shadow: 
+        -2px -2px 0 rgba(2, 2, 4, 0.2),
+        2px -2px 0 rgba(2, 2, 4, 0.2),
+        -2px 2px 0 rgba(2, 2, 4, 0.2),
+        2px 2px 0 rgba(2, 2, 4, 0.2);
+  }
+
+
+/*-- Header --*/
+.text-header{
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+header p{
+    max-width: 90%;
+}
+
+.logotipo{
+    width: 4rem;
+}
+
+
+/*-- Menu --*/
+#menu li > a{
+    font-weight: 500 !important;
+    display: flex !important;
+    justify-content:flex-end !important ;
+}
+
+#menu li > a {
+    font-family: 18px;
+    font-weight: bold;
+    color: #3f3f3f;
+}
+
+#menu button {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/*-- Introducción--*/
+#intro{
+    text-align: justify;
+    padding: 2rem;
+    align-items: center;
+    text-shadow: 
+        -2px -2px 0 rgba(2, 2, 4, 0.1),
+        2px -2px 0 rgba(2, 2, 4, 0.1),
+        -2px 2px 0 rgba(2, 2, 4, 0.1),
+        2px 2px 0 rgba(2, 2, 4, 0.1);
+}
+
+#intro img{
+    width: 500px;
+    padding-left: 10rem;
+}
+
+
+/* media query*/
+@media (max-width:1080px) {
+    #intro{
+        width: 90% !important;
+        flex-wrap: wrap;
+        justify-content:center !important;
+        padding: 1rem;
+    }
+
+    #intro img{
+        padding-left: 0rem;
+    }
+
+    .trayectoria {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    #intro img{
+        width: 100%;
+    }
+}
+
+
+/*-- Slider--*/
+.slider {
+    overflow: hidden; 
+    position: relative;
+    width: 100%; 
+}
+
+.slider .slide-track {
+display: flex;
+animation: scroll 15s linear infinite;
+}
+
+.slider .slide {
+flex: 0 0 auto; 
+padding-right: 50px; 
+}
+
+.slider .slide p {
+white-space: nowrap; 
+}
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%); 
+    }
+  }
+
+/*----------------------------------------*/
+
+/*-- Carrusel--*/
+.carousel-inner {
+    height: 50vh; 
+    position: relative;
+}
+
+.carousel-item img {
+    display: block;
+    width: 100%; 
+    height: 50vh; 
+    object-fit: cover; 
+    position: relative;
+    z-index: 0;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    height: 60%; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: 1; 
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    width: 90%;  /* Ajusta el ancho del contenedor de texto para evitar que se desborde */
+    color: white;
+    padding: 0 1rem;  /* Agrega un pequeño padding para que el texto no quede pegado a los bordes */
+    box-sizing: border-box;  /* Asegura que el padding no afecte el tamaño total */
+    overflow: hidden;  /* Evita que el texto se desborde fuera del contenedor */
+}
+
+/* Para pantallas pequeñas (menos de 768px), solo el título será visible */
+@media (max-width: 768px) {
+
+
+    .carousel-caption p,
+    .carousel-caption p.pb-2 {
+        display: none !important;  /* Asegura que el párrafo no se muestre */
+    }
+
+    .carousel-caption{
+        display: fle !important;
+        align-items: center !important; 
+    }
+    .carousel-caption h3 {
+        font-size: 1.5rem;  /* Ajusta el tamaño del título en pantallas pequeñas */
+        font-weight: bold;
+    }
+    
+
+}
+
+/* Para pantallas medianas y grandes (768px o más), todo el contenido es visible */
+@media (min-width: 768px) {
+    .carousel-caption p,  /* Asegura que el párrafo sea visible */
+    .carousel-caption p.pb-2 {
+        display: block !important;  /* Muestra el párrafo */
+    }
+
+
+    .carousel-caption h3 {
+        font-size: 3rem;/* Asegúrate de que el título sea grande en pantallas grandes */
+    }
+}
+
+/* Carrusel */
+.carousel-item img {
+    display: block;
+    width: 100%; 
+    height: 50vh; 
+    object-fit: cover; 
+    position: relative;
+    z-index: 0;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    height: 60%; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    z-index: 1; 
+}
+
+/* Ajuste de los párrafos en pantallas medianas y grandes */
+.carousel-caption p.pb-2 {
+    margin: 1.5rem; 
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+    width: auto; 
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal; 
+    word-wrap: break-word;  
+}
+
+
+
+
+/*--Proyectos destacados--*/
+.project{
+padding: 0;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    max-height: 160px;
+    object-fit: cover;
+}
+  
+
+#featured-projects .project h3{
+    font-weight: bold ;
+}
+
+#featured-projects .project h5{
+    font-size: .8rem;
+}
+
+#featured-projects .project p{
+    text-align: justify ;
+}
+
+#featured-projects .bg-dark-opacity {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*-- Trayectoria--*/
+.trayectoria{
+    padding: 0 !important;
+}
+
+.trayectoria .bg-dark-opacity {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.trayectoria h3{
+    color: rgb(0, 255, 255);
+    border-color: rgb(0, 255, 255) !important;
+}
+
+.trayectoria p{
+    text-align: justify;
+}
+
+
+@media (min-width: 767px) {
+    .trayectoria a {
+        display: flex; 
+        height: 100%; 
+    }
+
+    .trayectoria img {
+        width: auto; 
+        height: 100%; 
+        max-width: 254px; 
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .trayectoria .bg-dark-opacity {
+        height: 100%; /* Asegúrate de que el contenedor también tenga 100% de altura */
+    }
+}
+
+@media (max-width: 768px) {
+    .trayectoria img {
+        width: 100%;
+        height: auto;
+        max-height: 160px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px; 
+        border-top-right-radius: 10px;
+    }
+    .icono-wrap{
+        flex-wrap: wrap;
+    }
+}
+
+/*-- Propuesta de valor--*/
+#values{
+    text-shadow: 
+        -2px -2px 0 rgba(2, 2, 4, 0.2),
+        2px -2px 0 rgba(2, 2, 4, 0.2),
+        -2px 2px 0 rgba(2, 2, 4, 0.2),
+        2px 2px 0 rgba(2, 2, 4, 0.2);
+}
+
+/*-- footer--*/
+/* Para pantallas medianas y más grandes */
+@media (min-width: 768px) {
+    footer .container-fluid {
+        display: flex;
+        justify-content: space-between; /* Alinea las secciones horizontalmente */
+        flex-direction: row; /* Alinea en una fila */
+        align-items: center; /* Alinea los elementos verticalmente */
+    }
+
+    footer .container-fluid section {
+        margin-bottom: 0; /* Elimina el margen inferior en pantallas medianas y grandes */
+    }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 900px) {
+    .container-fluid {
+        flex-direction: column !important;
+        justify-content: space-between; /* Para que las secciones se alineen a los extremos */
+    }
+
+    .container-fluid section:nth-child(1) {
+        align-self: flex-start; /* Sección 2 a la izquierda */
+    }
+
+    .container-fluid section:nth-child(2) {
+        align-self: flex-end; /* Sección 3 a la derecha */
+    }
+}
+
+
+
+@media (min-width: 901px) {
+    .container-fluid {
+        flex-direction: row; /* En pantallas medianas, las secciones estarán en fila */
+    }
+}
+
+
+
+
+
+
